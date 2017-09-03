@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <div>Name: {{ book.name }}</div>
+            <div>Description: {{ book.description }}</div>
+            <hr>
+            <div>Category: <a href="{{ path('singleCategory',{'id': book.categorycategory.idcategory}) }}" class="btn btn-danger">{{ book.categorycategory.name }} </a></div>
+            <hr>
+            <div>Author: <a href="{{ path('singleCategory',{'id': book.authorsauthors.idauthors}) }}" class="btn btn-info"> {{ book.authorsauthors.name }} </a></div>
+        </div>
+    </div>
+{% endblock %}

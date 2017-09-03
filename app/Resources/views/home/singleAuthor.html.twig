@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+      <div>
+          <div>Name: {{ authors.name }}</div>
+          <div>Description: {{ authors.description }}</div>
+          <div>
+              Books:
+              <table class="table">
+                  {% for item in books %}
+                      <tr>
+                          <td><a href="{{ path('singleBook',{'id': item.idbooks}) }}" class="btn btn-info">{{ item.name }}</a></td>
+                      </tr>
+                  {% endfor %}
+              </table>
+          </div>
+      </div>
+    </div>
+{% endblock %}

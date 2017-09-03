@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <table class="table">
+        {% for item in books %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td><a href="{{ path('singleCategory',{'id': item.categorycategory.idcategory }) }}" class="btn btn-info">{{ item.categorycategory.name }}</a></td>
+                <td><a href="{{ path('singleAuthor',{'id': item.authorsauthors.idauthors}) }}" class="btn btn-danger">{{ item.authorsauthors.name }}</a></td>
+            </tr>
+
+        {% endfor %}
+        </table>
+        <a href="{{ path('category') }}" class="btn btn-danger">kategorie</a>
+        <a href="{{ path('authors') }}" class="btn btn-success">autorzy</a>
+    </div>
+{% endblock %}

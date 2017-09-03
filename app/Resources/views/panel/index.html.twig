@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col ">
+
+            <div class="jumbotron">
+                <h1 class="display-3">Panel admina </h1>
+                <hr class="my-4">
+                <a class="btn btn-primary" href="{{ path('addCategory') }}">Add category</a>
+                <a class="btn btn-warning" href="{{ path('addAuthor') }}">Add author</a>
+                <a class="btn btn-info" href="{{ path('addBooks') }}">Add books</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+    <div class="col">
+
+        <div class="jumbotron">
+            <h1 class="display-3">Ksiażki</h1>
+        <table class="table ">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>panel</th>
+            </tr>
+            </thead>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>{{ book.authorsauthors.name }}</td>
+                    <td>{{ book.categorycategory.name }}</td>
+                    <td><a href="{{ path('editBook',{'id': book.idbooks}) }}" class="btn btn-success">edytuj</a> <a
+                                href="{{ path('delBook',{'id': book.idbooks}) }}" class="btn btn-danger">usuń</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-3">Kategorie</h1>
+        <table class="table ">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>panel</th>
+            </tr>
+            </thead>
+            {% for item in category %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td><a href="{{ path('editCategory',{'id': item.idcategory}) }}" class="btn btn-success">edytuj</a>
+                        <a
+                                href="{{ path('delCategory',{'id': item.idcategory}) }}" class="btn btn-danger">usuń</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col">
+        <div class="jumbotron">
+        <h1 class="display-3">Autorzy</h1>
+        <table class="table">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>panel</th>
+            </tr>
+            </thead>
+            {% for item in authors %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td><a href="{{ path('editAuthor',{'id': item.idauthors}) }}" class="btn btn-success">edytuj</a> <a
+                                href="{{ path('delAuthor',{'id': item.idauthors}) }}" class="btn btn-danger">usuń</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}
