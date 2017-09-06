@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zawisza
- * Date: 05.09.2017
- * Time: 18:54
- */
 
 namespace AppBundle\Controller;
-
 
 use AppBundle\Entity\Authors;
 use AppBundle\Entity\Books;
