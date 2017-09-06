@@ -5,14 +5,17 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Authors;
 use AppBundle\Entity\Books;
 use AppBundle\Entity\Category;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
 
 class PanelController extends Controller
 {
     /**
      * @Route("/panel", name="panel")
+     * @Method("GET")
      */
     public function indexAction(Request $request)
     {
@@ -25,10 +28,10 @@ class PanelController extends Controller
 
 
         // replace this example code with whatever you need
-        return $this->render('panel/index.html.twig',[
-            'books'=>$books,
-            'category'=>$category,
-            'authors'=>$authors,
+        return $this->render('panel/index.html.twig', [
+            'books' => $books,
+            'category' => $category,
+            'authors' => $authors,
         ]);
     }
 }

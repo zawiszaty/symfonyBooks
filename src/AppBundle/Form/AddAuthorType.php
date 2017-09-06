@@ -16,8 +16,8 @@ class AddAuthorType extends AbstractType
         $builder
             ->add('name')
             ->add('description');
-
     }
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

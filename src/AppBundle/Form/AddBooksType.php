@@ -12,7 +12,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-
 class AddBooksType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -23,17 +22,12 @@ class AddBooksType extends AbstractType
                 'placeholder' => 'Choose a Category',
                 'class' => 'AppBundle:Category',
                 'choice_label' => 'name',
-//                'multiple' => true,
-//                'expanded' => true,
             ])
             ->add('authorsauthors', EntityType::class, [
                 'placeholder' => 'Choose a Author',
                 'class' => Authors::class,
                 'choice_label' => 'name',
-//                'multiple' => true,
-//                'expanded' => true,
             ]);
-
     }
 
     public function configureOptions(OptionsResolver $resolver)

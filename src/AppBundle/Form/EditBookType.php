@@ -23,17 +23,12 @@ class EditBookType extends AbstractType
                 'placeholder' => 'Choose a Category',
                 'class' => 'AppBundle:Category',
                 'choice_label' => 'name',
-//                'multiple' => true,
-//                'expanded' => true,
             ])
             ->add('authorsauthors', EntityType::class, [
                 'placeholder' => 'Choose a Author',
                 'class' => Authors::class,
                 'choice_label' => 'name',
-//                'multiple' => true,
-//                'expanded' => true,
             ]);
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
