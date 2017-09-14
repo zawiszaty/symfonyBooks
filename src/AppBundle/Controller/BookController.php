@@ -5,33 +5,40 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Books;
 use AppBundle\Form\AddBooksType;
 use AppBundle\Form\EditBookType;
+use AppBundle\Utils\BookLogic\AddBook;
+use AppBundle\Utils\BookLogic\DelBook;
+use AppBundle\Utils\BookLogic\EditBook;
+use AppBundle\Utils\BookLogic\GetSingleBook;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookController extends Controller
 {
     /**
      * @Route("/panel/add/books", name="addBooks")
-     * @Method("GET")
      */
-    public function addBooks(Request $request): Response
+    public function addBooks(Request $request, AddBook $addBook): Response
     {
         $form = $this->createForm(AddBooksType::class);
         $form->add('save', SubmitType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
-            $this->addFlash(
-                'info',
-                'Your changes were saved!'
-            );
+            if ($this->get(AddBook::class)->addBook($task, $this->getDoctrine())) {
+                $this->addFlash(
+                    'info',
+                    'Your changes were saved!'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Error'
+                );
+            }
+
             return $this->redirectToRoute('panel');
         }
         return $this->render('panel/addBook.html.twig', array(
@@ -42,14 +49,12 @@ class BookController extends Controller
 
     /**
      * @Route("/book/{id}", name="singleBook", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function singleBook(Request $request, int $id): Response
+    public function singleBook(Request $request, int $id, GetSingleBook $getSingleBook): Response
     {
-        $repositoryBooks = $this->getDoctrine()->getRepository(Books::class);
-        $book = $repositoryBooks->findOneByIdbooks($id);
-        if ($book == null) {
-            $this->addFlash('info', 'Books not found');
+        $book = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
+        if (!$book) {
+            $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('homepage');
         }
         return $this->render('home/singleBook.html.twig', [
@@ -59,37 +64,34 @@ class BookController extends Controller
 
     /**
      * @Route("/panel/del/book/{id}", name="delBook", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function indexAction(Request $request, int $id): Response
+    public function delBook(Request $request, int $id, DelBook $delBook, GetSingleBook $getSingleBook): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Books::class);
-        $books = $repository->findOneByIdbooks($id);
-        if ($books == null) {
-            $this->addFlash('info', 'Book not found');
-            return $this->redirectToRoute('panel');
+
+        $books = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
+        if ($this->get(DelBook::class)->delBook($books, $this->getDoctrine())) {
+            $this->addFlash(
+                'info',
+                'Your changes were saved!'
+            );
+        } else {
+            $this->addFlash(
+                'danger',
+                'Error'
+            );
         }
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($books);
-        $em->flush();
-        $this->addFlash(
-            'info',
-            'Your changes were saved!'
-        );
         return $this->redirectToRoute('panel');
 
     }
 
     /**
      * @Route("/panel/edit/book/{id}", name="editBook", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function editBook(Request $request, int $id): Response
+    public function editBook(Request $request, int $id, EditBook $editBook, GetSingleBook $getSingleBook): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Books::class);
-        $books = $repository->findOneByIdbooks($id);
-        if ($books == null) {
-            $this->addFlash('notice', 'Books not found');
+        $books = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
+        if ($books->getIdbooks() == null) {
+            $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('panel');
         }
         $form = $this->createForm(EditBookType::class, $books);
@@ -97,13 +99,17 @@ class BookController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
-            $this->addFlash(
-                'info',
-                'Your changes were saved!'
-            );
+            if ($this->get(EditBook::class)->editBook($task, $this->getDoctrine())) {
+                $this->addFlash(
+                    'info',
+                    'Your changes were saved!'
+                );
+            } else {
+                $this->addFlash(
+                    'Error',
+                    'Error'
+                );
+            }
             return $this->redirectToRoute('panel');
         }
         return $this->render('panel/addBook.html.twig', array(

@@ -6,23 +6,26 @@ use AppBundle\Entity\Books;
 use AppBundle\Entity\Category;
 use AppBundle\Form\AddCategoryType;
 use AppBundle\Form\EditCategoryType;
+use AppBundle\Utils\CategoryLogic\AddCategory;
+use AppBundle\Utils\CategoryLogic\DelCategory;
+use AppBundle\Utils\CategoryLogic\EditCategory;
+use AppBundle\Utils\CategoryLogic\GetAllCategory;
+use AppBundle\Utils\CategoryLogic\GetCategoryBooks;
+use AppBundle\Utils\CategoryLogic\GetSingleCategory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
     /**
      * @Route("/category", name="category")
-     * @Method("GET")
      */
-    public function getAllCategory(Request $request): Response
+    public function getAllCategory(Request $request, GetAllCategory $getAllCategory): Response
     {
-        $repositoryCategory = $this->getDoctrine()->getRepository(Category::class);
-        $category = $repositoryCategory->findAll();
+        $category = $this->get(GetAllCategory::class)->getAllCategory($this->getDoctrine());
         return $this->render('home/category.html.twig', [
             'category' => $category,
         ]);
@@ -30,18 +33,15 @@ class CategoryController extends Controller
 
     /**
      * @Route("/category/{id}", name="singleCategory", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function getSingleCategory(Request $request, int $id): Response
+    public function getSingleCategory(Request $request, int $id, GetSingleCategory $getSingleCategory, GetCategoryBooks $getCategoryBooks): Response
     {
-        $repositoryCategory = $this->getDoctrine()->getRepository(Category::class);
-        $repositoryBooks = $this->getDoctrine()->getRepository(Books::class);
-        $category = $repositoryCategory->findOneByIdcategory($id);
-        if ($category == null) {
+        $category = $this->get(GetSingleCategory::class)->getSingleCategory($id, $this->getDoctrine());
+        $books = $this->get(GetCategoryBooks::class)->getCategoryBooks($id, $this->getDoctrine());
+        if (!$category) {
             $this->addFlash('info', 'Category not found');
             return $this->redirectToRoute('category');
         }
-        $books = $repositoryBooks->findByCategorycategory($id);
         return $this->render('home/singleCategory.html.twig', [
             'category' => $category,
             'books' => $books
@@ -51,23 +51,25 @@ class CategoryController extends Controller
 
     /**
      * @Route("/panel/add/category", name="addCategory", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function addCategory(Request $request): Response
+    public function addCategory(Request $request, AddCategory $addCategory): Response
     {
-        $category = new Category();
-        $form = $this->createForm(AddCategoryType::class, $category);
+        $form = $this->createForm(AddCategoryType::class);
         $form->add('save', SubmitType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
-            $this->addFlash(
-                'info',
-                'Your changes were saved!'
-            );
+            if ($this->get(AddCategory::class)->addCategory($task, $this->getDoctrine())) {
+                $this->addFlash(
+                    'info',
+                    'Your changes were saved!'
+                );
+            } else {
+                $this->addFlash(
+                    'error',
+                    'error'
+                );
+            }
             return $this->redirectToRoute('panel');
         }
         return $this->render('panel/addCategory.html.twig', array(
@@ -77,47 +79,45 @@ class CategoryController extends Controller
 
     /**
      * @Route("/panel/del/category/{id}", name="delCategory", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function delCategory(Request $request, int $id): Response
+    public function delCategory(Request $request, int $id, DelCategory $delCategory, GetSingleCategory $getSingleCategory, GetCategoryBooks $getCategoryBooks): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Category::class);
-        $category = $repository->findOneByIdcategory($id);
-        if ($category == null) {
-            $this->addFlash('notice', 'Category not found');
+        $category = $this->get(GetSingleCategory::class)->getSingleCategory($id, $this->getDoctrine());
+        if ($category->getIdcategory() == null) {
+
+            $this->addFlash('danger', 'Category not found');
             return $this->redirectToRoute('panel');
         }
         if ($category->getIdcategory() == '5') {
-            $this->addFlash('danger', 'You can not delete this category');
+            $this->addFlash('danger', 'Category not found');
             return $this->redirectToRoute('panel');
         }
-        $repositoryBooks = $this->getDoctrine()->getRepository(Books::class);
-        $books = $repositoryBooks->findByCategorycategory($id);
-        $editCategory = $repository->findOneByIdcategory('5');
+        $books = $this->get(GetCategoryBooks::class)->getCategoryBooks($id, $this->getDoctrine());
+        $editCategory = $this->get(GetSingleCategory::class)->getSingleCategory(5, $this->getDoctrine());
         foreach ($books as $item) {
             $item->setCategorycategory($editCategory);
         }
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($category);
-        $em->flush();
-        $this->addFlash(
-            'info',
-            'Your changes were saved!'
-        );
+        if ($this->get(DelCategory::class)->delCategory($category, $this->getDoctrine())) {
+            $this->addFlash(
+                'info',
+                'Your changes were saved!'
+            );
+        } else {
+            $this->addFlash('danger', 'Error');
+            return $this->redirectToRoute('panel');
+        }
         return $this->redirectToRoute('panel');
 
     }
 
     /**
      * @Route("/panel/edit/category/{id}", name="editCategory", requirements={"id": "\d+"})
-     * @Method("GET")
      */
-    public function editCategory(Request $request, int $id): Response
+    public function editCategory(Request $request, int $id, EditCategory $editCategory, GetSingleCategory $getSingleCategory): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Category::class);
-        $category = $repository->findOneByIdcategory($id);
-        if ($category == null) {
-            $this->addFlash('notice', 'Category not found');
+        $category = $this->get(GetSingleCategory::class)->getSingleCategory($id, $this->getDoctrine());
+        if ($category->getIdcategory() == null) {
+            $this->addFlash('danger', 'Category not found');
             return $this->redirectToRoute('panel');
         }
         $form = $this->createForm(EditCategoryType::class, $category);
@@ -125,14 +125,17 @@ class CategoryController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
-
-            $this->addFlash(
-                'info',
-                'Your changes were saved!'
-            );
+            if ($this->get(EditCategory::class)->editategory($task, $this->getDoctrine())) {
+                $this->addFlash(
+                    'info',
+                    'Your changes were saved!'
+                );
+            } else {
+                $this->addFlash(
+                    'danger',
+                    'Error'
+                );
+            }
             return $this->redirectToRoute('panel');
         }
         return $this->render('panel/addCategory.html.twig', array(

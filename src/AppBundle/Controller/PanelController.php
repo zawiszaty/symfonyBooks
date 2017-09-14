@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Authors;
 use AppBundle\Entity\Books;
 use AppBundle\Entity\Category;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use AppBundle\Utils\AuthorLogic\GetAllAuthor;
+use AppBundle\Utils\BookLogic\GetAllBooks;
+use AppBundle\Utils\CategoryLogic\GetAllCategory;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,19 +16,12 @@ class PanelController extends Controller
 {
     /**
      * @Route("/panel", name="panel")
-     * @Method("GET")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, GetAllAuthor $getAllAuthor, GetAllBooks $getAllBooks, GetAllCategory $getAllCategory)
     {
-        $repositoryBooks = $this->getDoctrine()->getRepository(Books::class);
-        $repositoryCategory = $this->getDoctrine()->getRepository(Category::class);
-        $repositoryAuthors = $this->getDoctrine()->getRepository(Authors::class);
-        $books = $repositoryBooks->findAll();
-        $category = $repositoryCategory->findAll();
-        $authors = $repositoryAuthors->findAll();
-
-
-        // replace this example code with whatever you need
+        $authors = $this->get(GetAllAuthor::class)->getAllAuthors($this->getDoctrine());
+        $books = $this->get(GetAllBooks::class)->getAllBooks($this->getDoctrine());
+        $category = $this->get(GetAllCategory::class)->getAllCategory($this->getDoctrine());
         return $this->render('panel/index.html.twig', [
             'books' => $books,
             'category' => $category,

@@ -10,11 +10,13 @@
                 <table class="table">
                     {% for item in books %}
                         <tr>
-                            <td><a href="{{ path('singleBook',{'id': item.idbooks}) }}" class="btn btn-info">{{ item.name }}</a></td>
+                            <td><a href="{{ path('singleBook',{'id': item.idbooks}) }}"
+                                   class="btn btn-info">{{ item.name }}</a></td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
+
         </div>
     </div>
 {% endblock %}

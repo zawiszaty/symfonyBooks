@@ -6,7 +6,7 @@
             <table class="table">
                 {% for item in authors %}
                     <tr>
-                        <td><a href="{{ path('singleAuthor',{'id': item.idauthors}) }}">{{ item.name }}</a></td>
+                        <td><a href="{{ path('singleAuthor',{'id': item.idauthors}) }}" class="btn btn-info">{{ item.name }}</a></td>
                         <td>{{ item.description }}</td>
                     </tr>
                 {% endfor %}
