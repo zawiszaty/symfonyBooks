@@ -10,7 +10,6 @@ class DelAuthor
 {
     public function delAuthor(Authors $author, Registry $doctrine): bool
     {
-
         $em = $doctrine->getManager();
         $em->remove($author);
         $em->flush();

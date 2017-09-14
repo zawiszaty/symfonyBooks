@@ -18,7 +18,6 @@ class HomeController extends Controller
     public function indexAction(Request $request, GetAllBooks $getAllBooks): Response
     {
         $books = $this->get(GetAllBooks::class)->getAllBooks($this->getDoctrine());
-
         return $this->render('home/index.html.twig', [
             'books' => $books,
         ]);

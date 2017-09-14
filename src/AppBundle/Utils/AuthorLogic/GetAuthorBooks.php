@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zawisza
- * Date: 11.09.2017
- * Time: 19:16
- */
 
 namespace AppBundle\Utils\AuthorLogic;
-
 
 use AppBundle\Entity\Books;
 use Doctrine\Bundle\DoctrineBundle\Registry;

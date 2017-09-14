@@ -38,7 +38,6 @@ class BookController extends Controller
                     'Error'
                 );
             }
-
             return $this->redirectToRoute('panel');
         }
         return $this->render('panel/addBook.html.twig', array(
@@ -67,7 +66,6 @@ class BookController extends Controller
      */
     public function delBook(Request $request, int $id, DelBook $delBook, GetSingleBook $getSingleBook): Response
     {
-
         $books = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
         if ($this->get(DelBook::class)->delBook($books, $this->getDoctrine())) {
             $this->addFlash(

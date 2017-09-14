@@ -2,7 +2,6 @@
 
 namespace AppBundle\Utils\AuthorLogic;
 
-
 use AppBundle\Entity\Authors;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 

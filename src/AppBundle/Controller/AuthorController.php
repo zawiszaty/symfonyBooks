@@ -38,7 +38,6 @@ class AuthorController extends Controller
      */
     public function addAuthor(Request $request, AddAuthor $addAuthor): Response
     {
-
         $form = $this->createForm(AddAuthorType::class);
         $form->add('save', SubmitType::class);
         $form->handleRequest($request);
@@ -67,7 +66,6 @@ class AuthorController extends Controller
      */
     public function delAuthor(Request $request, int $id, DelAuthor $delAuthor, GetSingleAuthor $getSingleAuthor, GetAuthorBooks $getAuthorBooks): Response
     {
-
         $author = $this->get(GetSingleAuthor::class)->getSingleAuthor($id, $this->getDoctrine());
         if ($author->getIdauthors() == null) {
             $this->addFlash(
@@ -133,7 +131,6 @@ class AuthorController extends Controller
     {
         $author = $this->get(GetSingleAuthor::class)->getSingleAuthor($id, $this->getDoctrine());
         $books = $this->get(GetAuthorBooks::class)->getAuthorBook($id, $this->getDoctrine());
-
         if (!$author) {
             $this->addFlash(
                 'danger',
@@ -141,7 +138,6 @@ class AuthorController extends Controller
             );
             return $this->redirectToRoute('panel');
         }
-
         return $this->render('home/singleAuthor.html.twig', [
             'authors' => $author,
             'books' => $books

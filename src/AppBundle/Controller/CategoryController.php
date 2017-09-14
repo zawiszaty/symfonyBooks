@@ -84,7 +84,6 @@ class CategoryController extends Controller
     {
         $category = $this->get(GetSingleCategory::class)->getSingleCategory($id, $this->getDoctrine());
         if ($category->getIdcategory() == null) {
-
             $this->addFlash('danger', 'Category not found');
             return $this->redirectToRoute('panel');
         }
