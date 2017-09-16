@@ -7,8 +7,17 @@ use AppBundle\Entity\Books;
 use AppBundle\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
+/**
+ * Class CategoryLogic
+ * @package AppBundle\Utils
+ */
 class CategoryLogic
 {
+    /**
+     * @param Category $category
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function addCategory(Category $category, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
@@ -17,6 +26,11 @@ class CategoryLogic
         return true;
     }
 
+    /**
+     * @param Category $delCategory
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function delCategory(Category $delCategory, Registry $doctrine): bool
     {
 
@@ -26,6 +40,11 @@ class CategoryLogic
         return true;
     }
 
+    /**
+     * @param Category $category
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function editategory(Category $category, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
@@ -34,6 +53,10 @@ class CategoryLogic
         return true;
     }
 
+    /**
+     * @param Registry $doctrine
+     * @return array
+     */
     public function getAllCategory(Registry $doctrine): array
     {
         $repositoryCategory = $doctrine->getRepository(Category::class);
@@ -41,6 +64,11 @@ class CategoryLogic
         return $category;
     }
 
+    /**
+     * @param int $id
+     * @param Registry $doctrine
+     * @return array
+     */
     public function getCategoryBooks(int $id, Registry $doctrine): array
     {
         $repositoryBooks = $doctrine->getRepository(Books::class);
@@ -49,6 +77,11 @@ class CategoryLogic
         return $books;
     }
 
+    /**
+     * @param int $id
+     * @param Registry $doctrine
+     * @return Category
+     */
     public function getSingleCategory(int $id, Registry $doctrine): Category
     {
         $repositoryCategory = $doctrine->getRepository(Category::class);
@@ -58,6 +91,13 @@ class CategoryLogic
         }
         return $category;
     }
+
+    /**
+     * @param Category $category
+     * @param array $books
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function removeBooksCategory(Category $category, array $books, Registry $doctrine)
     {
         foreach ($books as $item) {

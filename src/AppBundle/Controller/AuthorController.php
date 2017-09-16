@@ -12,21 +12,39 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 
+/**
+ * Class AuthorController
+ *
+ * @package AppBundle\Controller
+ *
+ */
 class AuthorController extends Controller
 {
     /**
+     * This method get all authors
+     *
+     * @param Request     $request     request object
+     * @param AuthorLogic $authorLogic AuthorLogic service
+     *
      * @Route("/authors", name="authors")
+     *
+     * @return Response
      */
     public function getAllAuthors(Request $request, AuthorLogic $authorLogic): Response
     {
-        $authors = $this->get(AuthorLogic::class)->getAllAuthors($this->getDoctrine());
-        return $this->render('home/authors.html.twig', [
-            'authors' => $authors,
-        ]);
+        $authors = $authorLogic->getAllAuthors($this->getDoctrine());
+        return $this->render('home/authors.html.twig', ['authors' => $authors,]);
     }
 
     /**
-     * @Route("/panel/add/author", name="addAuthor")
+     * This method added author
+     *
+     * @param Request     $request     sdfsdf
+     * @param AuthorLogic $authorLogic asdad
+     *
+     * @Route("/panel/add/author, name="addAuthor")
+     *
+     * @return Response
      */
     public function addAuthor(Request $request, AuthorLogic $authorLogic): Response
     {
@@ -35,7 +53,7 @@ class AuthorController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(AuthorLogic::class)->addAuthor($task, $this->getDoctrine())) {
+            if ($authorLogic->addAuthor($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
@@ -48,17 +66,23 @@ class AuthorController extends Controller
             }
             return $this->redirectToRoute('panel');
         }
-        return $this->render('panel/addAuthor.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render('panel/addAuthor.html.twig', array('form' => $form->createView()));
     }
 
     /**
+     * This method deleted author
+     *
+     * @param Request     $request     request object
+     * @param int         $id          author id
+     * @param AuthorLogic $authorLogic Authir Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/panel/del/author/{id}", name="delAuthor", requirements={"id": "\d+"})
      */
     public function delAuthor(Request $request, int $id, AuthorLogic $authorLogic): Response
     {
-        $author = $this->get(AuthorLogic::class)->getSingleAuthor($id, $this->getDoctrine());
+        $author = $authorLogic->getSingleAuthor($id, $this->getDoctrine());
         if ($author->getIdauthors() == null) {
             $this->addFlash(
                 'danger',
@@ -66,10 +90,10 @@ class AuthorController extends Controller
             );
             return $this->redirectToRoute('panel');
         }
-        $books = $this->get(AuthorLogic::class)->getAuthorBook($id, $this->getDoctrine());
-        $authors = $this->get(AuthorLogic::class)->getSingleAuthor(5, $this->getDoctrine());
-        $this->get(AuthorLogic::class)->removeAuthorBooks($authors, $books, $this->getDoctrine());
-        if ($this->get(AuthorLogic::class)->delAuthor($author, $this->getDoctrine())) {
+        $books = $authorLogic->getAuthorBook($id, $this->getDoctrine());
+        $authors = $authorLogic->getSingleAuthor(5, $this->getDoctrine());
+        $authorLogic->removeAuthorBooks($authors, $books, $this->getDoctrine());
+        if ($authorLogic->delAuthor($author, $this->getDoctrine())) {
             $this->addFlash(
                 'info',
                 'Your changes were saved!'
@@ -84,11 +108,19 @@ class AuthorController extends Controller
     }
 
     /**
+     * This method edit author
+     *
+     * @param Request     $request     request object
+     * @param int         $id          author id
+     * @param AuthorLogic $authorLogic Authir Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/panel/edit/author/{id}", name="editAuthor", requirements={"id": "\d+"})
      */
     public function editAuthor(Request $request, int $id, AuthorLogic $authorLogic): Response
     {
-        $author = $this->get(AuthorLogic::class)->getSingleAuthor($id, $this->getDoctrine());
+        $author = $authorLogic->getSingleAuthor($id, $this->getDoctrine());
         if ($author->getIdauthors() == null) {
             $this->addFlash(
                 'danger',
@@ -101,7 +133,7 @@ class AuthorController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(AuthorLogic::class)->editAuthor($task, $this->getDoctrine())) {
+            if ($authorLogic->editAuthor($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
@@ -109,18 +141,25 @@ class AuthorController extends Controller
             }
             return $this->redirectToRoute('homepage');
         }
-        return $this->render('panel/addAuthor.html.twig', array(
-            'form' => $form->createView(),
-        ));
+
+        return $this->render('panel/addAuthor.html.twig', array('form' => $form->createView(),));
     }
 
     /**
+     * This method get single author
+     *
+     * @param Request     $request     request object
+     * @param int         $id          author id
+     * @param AuthorLogic $authorLogic Authir Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/authors/{id}", name="singleAuthor", requirements={"id": "\d+"})
      */
     public function getSingleAuthor(Request $request, int $id, AuthorLogic $authorLogic): Response
     {
-        $author = $this->get(AuthorLogic::class)->getSingleAuthor($id, $this->getDoctrine());
-        $books = $this->get(AuthorLogic::class)->getAuthorBook($id, $this->getDoctrine());
+        $author = $authorLogic->getSingleAuthor($id, $this->getDoctrine());
+        $books = $authorLogic->getAuthorBook($id, $this->getDoctrine());
         if (!$author) {
             $this->addFlash(
                 'danger',
@@ -128,11 +167,7 @@ class AuthorController extends Controller
             );
             return $this->redirectToRoute('panel');
         }
-        return $this->render('home/singleAuthor.html.twig', [
-            'authors' => $author,
-            'books' => $books
-
-        ]);
+        return $this->render('home/singleAuthor.html.twig', ['authors' => $author, 'books' => $books]);
     }
 
 }

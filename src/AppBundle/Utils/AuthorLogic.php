@@ -7,9 +7,20 @@ use AppBundle\Entity\Authors;
 use AppBundle\Entity\Books;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
+/**
+ * Class AuthorLogic
+ * @package AppBundle\Utils
+ */
 class AuthorLogic
 {
-    public function addAuthor($task, Registry $doctrine): bool
+    /**
+     *
+     *
+     * @param Authors  $task
+     * @param Registry $doctrine
+     * @return bool
+     */
+    public function addAuthor(Authors $task, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
         $em->persist($task);
@@ -17,6 +28,11 @@ class AuthorLogic
         return true;
     }
 
+    /**
+     * @param Authors $author
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function delAuthor(Authors $author, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
@@ -25,6 +41,11 @@ class AuthorLogic
         return true;
     }
 
+    /**
+     * @param Authors $task
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function editAuthor(Authors $task, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
@@ -33,6 +54,10 @@ class AuthorLogic
         return true;
     }
 
+    /**
+     * @param Registry $doctrine
+     * @return array
+     */
     public function getAllAuthors(Registry $doctrine): array
     {
         $repositoryAuthors = $doctrine->getRepository(Authors::class);
@@ -40,6 +65,11 @@ class AuthorLogic
         return $authors;
     }
 
+    /**
+     * @param int $id
+     * @param Registry $doctrine
+     * @return array
+     */
     public function getAuthorBook(int $id, Registry $doctrine): array
     {
         $repositoryBooks = $doctrine->getRepository(Books::class);
@@ -47,6 +77,11 @@ class AuthorLogic
         return $books;
     }
 
+    /**
+     * @param int $id
+     * @param Registry $doctrine
+     * @return Authors
+     */
     public function getSingleAuthor(int $id, Registry $doctrine): Authors
     {
         $repositoryAuthors = $doctrine->getRepository(Authors::class);
@@ -58,6 +93,12 @@ class AuthorLogic
         return $authors;
     }
 
+    /**
+     * @param Authors $author
+     * @param array $books
+     * @param Registry $doctrine
+     * @return bool
+     */
     public function removeAuthorBooks(Authors $author, array $books, Registry $doctrine): bool
     {
         foreach ($books as $item) {

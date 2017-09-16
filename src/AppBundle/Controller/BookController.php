@@ -12,9 +12,20 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class BookController
+ * @package AppBundle\Controller
+ */
 class BookController extends Controller
 {
     /**
+     * This method added book
+     *
+     * @param Request    $request    request object
+     * @param BooksLogic $booksLogic Books Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/panel/add/books", name="addBooks")
      */
     public function addBooks(Request $request, BooksLogic $booksLogic): Response
@@ -24,7 +35,7 @@ class BookController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(BooksLogic::class)->addBook($task, $this->getDoctrine())) {
+            if ($booksLogic->addBook($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
@@ -37,34 +48,46 @@ class BookController extends Controller
             }
             return $this->redirectToRoute('panel');
         }
-        return $this->render('panel/addBook.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render('panel/addBook.html.twig', array('form' => $form->createView(),));
 
     }
 
     /**
+     * This method get single Book
+     *
+     * @param Request    $request    request object
+     * @param int        $id         book id
+     * @param BooksLogic $booksLogic Books Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/book/{id}", name="singleBook", requirements={"id": "\d+"})
      */
     public function singleBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $book = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
+        $book = $booksLogic->getSingleBook($id, $this->getDoctrine());
         if (!$book) {
             $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('homepage');
         }
-        return $this->render('home/singleBook.html.twig', [
-            'book' => $book
-        ]);
+        return $this->render('home/singleBook.html.twig', ['book' => $book]);
     }
 
     /**
+     * This method del single Book
+     *
+     * @param Request    $request    request object
+     * @param int        $id         book id
+     * @param BooksLogic $booksLogic Books Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/panel/del/book/{id}", name="delBook", requirements={"id": "\d+"})
      */
     public function delBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $books = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
-        if ($this->get(BooksLogic::class)->delBook($books, $this->getDoctrine())) {
+        $books = $booksLogic->getSingleBook($id, $this->getDoctrine());
+        if ($booksLogic->delBook($books, $this->getDoctrine())) {
             $this->addFlash(
                 'info',
                 'Your changes were saved!'
@@ -80,11 +103,19 @@ class BookController extends Controller
     }
 
     /**
+     * This method edit single Book
+     *
+     * @param Request    $request    request object
+     * @param int        $id         book id
+     * @param BooksLogic $booksLogic Books Buisnesss
+     *
+     * @return Response
+     *
      * @Route("/panel/edit/book/{id}", name="editBook", requirements={"id": "\d+"})
      */
     public function editBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $books = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
+        $books = $booksLogic->getSingleBook($id, $this->getDoctrine());
         if ($books->getIdbooks() == null) {
             $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('panel');
@@ -94,7 +125,7 @@ class BookController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(BooksLogic::class)->editBook($task, $this->getDoctrine())) {
+            if ($booksLogic->editBook($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
@@ -107,9 +138,7 @@ class BookController extends Controller
             }
             return $this->redirectToRoute('panel');
         }
-        return $this->render('panel/addBook.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render('panel/addBook.html.twig', array('form' => $form->createView()));
 
     }
 
