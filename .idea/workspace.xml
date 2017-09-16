@@ -2,27 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d20b590-4032-4a9c-84ed-ade9242fa091" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BooksLogic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAllAuthor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAuthorBooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetSingleAuthor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/AddBook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetCategoryBooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/symfony2.xml" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BookController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BookController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAllAuthor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAllAuthor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAuthorBooks.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAuthorBooks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetSingleAuthor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetSingleAuthor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/AddBook.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/AddBook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,118 +43,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DelBook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php">
+      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#72#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelCategory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#49#76#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddCategory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-              <folding>
-                <element signature="e#49#79#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditCategory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#49#79#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetAllCategory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetSingleCategory.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php">
+      <file leaf-file-name="AuthorController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#73#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml.dist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditBook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php">
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1377">
+              <caret line="90" column="100" lean-forward="false" selection-start-line="90" selection-start-column="100" selection-end-line="90" selection-end-column="100" />
               <folding>
-                <element signature="e#45#72#0#PHP" expanded="true" />
+                <element signature="e#40#67#0#PHP" expanded="true" />
+                <element signature="e#804#829#0#PHP" expanded="true" />
+                <element signature="e#1474#1505#0#PHP" expanded="true" />
+                <element signature="e#2489#2518#0#PHP" expanded="true" />
+                <element signature="e#5258#5287#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetCategoryBooks.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetCategoryBooks.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding>
-                <element signature="e#49#76#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetAllBooks.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#72#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetSingleBook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php">
+      <file leaf-file-name="BooksLogic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BooksLogic.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding>
-                <element signature="e#45#72#0#PHP" expanded="true" />
+                <element signature="e#36#63#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryLogic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#63#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthorLogic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#65#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PanelController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,10 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DelBookController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DelAuthorController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SingleCategoryController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SingleBookController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AuthorsController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Authors.php" />
@@ -190,16 +191,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/AddCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/DelCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/EditCategory.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetCategoryBooks.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/home/singleAuthor.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/home/singleBook.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/home/singleCategory.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BookController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php" />
@@ -211,11 +206,21 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/RemoveBooksCategory.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BookController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/BooksLogic.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php" />
       </list>
     </option>
   </component>
@@ -225,7 +230,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+  <component name="PHPCodeSnifferProjectConfiguration">
+    <option name="selectedConfigurationId" value="DEFAULT_INTERPRETER" />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
@@ -268,8 +279,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-17" />
+    <option name="y" value="-21" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -289,6 +301,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -354,53 +367,10 @@
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Utils" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Utils" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AuthorLogic" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Utils" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BookLogic" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Utils" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="CategoryLogic" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfonyBooks2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfonyBooks2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,8 +383,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\symfonyBooks2\src\AppBundle\Utils\CategoryLogic" />
       <recent name="C:\xampp\htdocs\symfonyBooks2\src\AppBundle\Utils\BookLogic" />
+      <recent name="C:\xampp\htdocs\symfonyBooks2\src\AppBundle\Utils\CategoryLogic" />
       <recent name="C:\xampp\htdocs\symfonyBooks2\src\AppBundle\Utils\AuthorLogic" />
     </key>
   </component>
@@ -549,25 +519,26 @@
       <workItem from="1505139558694" duration="2016000" />
       <workItem from="1505148792588" duration="4343000" />
       <workItem from="1505322490488" duration="3108000" />
-      <workItem from="1505407239255" duration="503000" />
+      <workItem from="1505407239255" duration="2042000" />
+      <workItem from="1505540662083" duration="4185000" />
+      <workItem from="1505555927741" duration="1222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54812000" />
+    <option name="totallyTimeSpent" value="61758000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17963752" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.109253064" sideWeight="0.52238804" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.109253064" sideWeight="0.47761193" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.548495" sideWeight="0.47761193" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -637,12 +608,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AddBookController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DelBookController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EditBookController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SingleBookController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AddCategoryController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DelCategoryController.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EdiCategoryController.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SingleCategoryController.php" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AddAuthorType.php">
@@ -752,19 +717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/home/singleAuthor.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -780,7 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,9 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,221 +749,125 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAllAuthor.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAuthorBooks.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetSingleAuthor.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/AddBook.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/RemoveBooksCategory.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetCategoryBooks.php" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php" />
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#36#63#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BooksLogic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="139" column="9" lean-forward="false" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
+            <element signature="e#36#63#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-354">
-          <caret line="85" column="49" lean-forward="false" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
+            <element signature="e#36#65#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PanelController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/EditAuthor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/DelAuthor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#76#0#PHP" expanded="true" />
-            <marker date="1505407660750" expanded="true" signature="247:338" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/AddAuthor.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#47#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAllAuthor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#47#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetAuthorBooks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/AuthorLogic/GetSingleAuthor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/AddBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/DelBook.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="1377">
+          <caret line="90" column="100" lean-forward="false" selection-start-line="90" selection-start-column="100" selection-end-line="90" selection-end-column="100" />
           <folding>
-            <element signature="e#45#72#0#PHP" expanded="true" />
+            <element signature="e#40#67#0#PHP" expanded="true" />
+            <element signature="e#804#829#0#PHP" expanded="true" />
+            <element signature="e#1474#1505#0#PHP" expanded="true" />
+            <element signature="e#2489#2518#0#PHP" expanded="true" />
+            <element signature="e#5258#5287#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/EditBook.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetAllBooks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/BookLogic/GetSingleBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#45#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/DelCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/AddCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#49#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/EditCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetAllCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetCategoryBooks.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuthorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#49#76#0#PHP" expanded="true" />
+            <element signature="e#40#73#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/CategoryLogic/GetSingleCategory.php">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

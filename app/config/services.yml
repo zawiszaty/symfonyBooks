@@ -30,43 +30,14 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    AppBundle\Utils\AuthorLogic\DelAuthor:
-      public: false
-    AppBundle\Utils\AuthorLogic\EditAuthor:
-          public: false
-    AppBundle\Utils\AuthorLogic\AddAuthor:
-        public: false
-    AppBundle\Utils\AuthorLogic\GetAllAuthor:
-        public: false
-    AppBundle\Utils\AuthorLogic\GetSingleAuthor:
-        public: false
-    AppBundle\Utils\AuthorLogic\GetAuthorBooks:
+    AppBundle\Utils\AuthorLogic:
         public: false
 
-    AppBundle\Utils\BookLogic\AddBook:
-          public: false
-    AppBundle\Utils\BookLogic\DelBook:
-          public: false
-    AppBundle\Utils\CategoryLogic\BookLogic\EditBook:
-          public: false
-    AppBundle\Utils\CategoryLogic\BookLogic\GetSingleBook:
-          public: false
-    AppBundle\Utils\CategoryLogic\BookLogic\GetAllBooks:
-          public: false
+    AppBundle\Utils\BooksLogic:
+        public: false
 
-    AppBundle\Utils\CategoryLogic\AddCategory:
-          public: false
-    AppBundle\Utils\CategoryLogic\DelCategory:
-          public: false
-    AppBundle\Utils\CategoryLogic\EditCategory:
-          public: false
-    AppBundle\Utils\CategoryLogic\GetAllCategory:
-          public: false
-    AppBundle\Utils\CategoryLogic\GetSingleCategory:
-          public: false
-    AppBundle\Utils\CategoryLogic\GetCategoryBooks:
-          public: false
-
+    AppBundle\Utils\CategoryLogic:
+        public: false
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:

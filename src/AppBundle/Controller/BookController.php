@@ -5,10 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Books;
 use AppBundle\Form\AddBooksType;
 use AppBundle\Form\EditBookType;
-use AppBundle\Utils\BookLogic\AddBook;
-use AppBundle\Utils\BookLogic\DelBook;
-use AppBundle\Utils\BookLogic\EditBook;
-use AppBundle\Utils\BookLogic\GetSingleBook;
+use AppBundle\Utils\BooksLogic;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,14 +17,14 @@ class BookController extends Controller
     /**
      * @Route("/panel/add/books", name="addBooks")
      */
-    public function addBooks(Request $request, AddBook $addBook): Response
+    public function addBooks(Request $request, BooksLogic $booksLogic): Response
     {
         $form = $this->createForm(AddBooksType::class);
         $form->add('save', SubmitType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(AddBook::class)->addBook($task, $this->getDoctrine())) {
+            if ($this->get(BooksLogic::class)->addBook($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
@@ -49,9 +46,9 @@ class BookController extends Controller
     /**
      * @Route("/book/{id}", name="singleBook", requirements={"id": "\d+"})
      */
-    public function singleBook(Request $request, int $id, GetSingleBook $getSingleBook): Response
+    public function singleBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $book = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
+        $book = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
         if (!$book) {
             $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('homepage');
@@ -64,10 +61,10 @@ class BookController extends Controller
     /**
      * @Route("/panel/del/book/{id}", name="delBook", requirements={"id": "\d+"})
      */
-    public function delBook(Request $request, int $id, DelBook $delBook, GetSingleBook $getSingleBook): Response
+    public function delBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $books = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
-        if ($this->get(DelBook::class)->delBook($books, $this->getDoctrine())) {
+        $books = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
+        if ($this->get(BooksLogic::class)->delBook($books, $this->getDoctrine())) {
             $this->addFlash(
                 'info',
                 'Your changes were saved!'
@@ -85,9 +82,9 @@ class BookController extends Controller
     /**
      * @Route("/panel/edit/book/{id}", name="editBook", requirements={"id": "\d+"})
      */
-    public function editBook(Request $request, int $id, EditBook $editBook, GetSingleBook $getSingleBook): Response
+    public function editBook(Request $request, int $id, BooksLogic $booksLogic): Response
     {
-        $books = $this->get(GetSingleBook::class)->getSingleBook($id, $this->getDoctrine());
+        $books = $this->get(BooksLogic::class)->getSingleBook($id, $this->getDoctrine());
         if ($books->getIdbooks() == null) {
             $this->addFlash('danger', 'Books not found');
             return $this->redirectToRoute('panel');
@@ -97,7 +94,7 @@ class BookController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
-            if ($this->get(EditBook::class)->editBook($task, $this->getDoctrine())) {
+            if ($this->get(BooksLogic::class)->editBook($task, $this->getDoctrine())) {
                 $this->addFlash(
                     'info',
                     'Your changes were saved!'
