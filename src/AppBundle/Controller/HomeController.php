@@ -2,8 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Books;
-use AppBundle\Utils\BooksLogic;
+use AppBundle\Entity\Book;
+use AppBundle\Utils\BookLogic;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,16 +19,16 @@ class HomeController extends Controller
     /**
      * This method get all Books
      *
-     * @param Request    $request    request object
-     * @param BooksLogic $booksLogic Books buisness logic
+     * @param Request   $request   request object
+     * @param BookLogic $bookLogic Books buisness logic
      *
      * @return Response
      *
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request, BooksLogic $booksLogic): Response
+    public function indexAction(Request $request, BookLogic $bookLogic): Response
     {
-        $books = $booksLogic->getAllBooks($this->getDoctrine());
+        $books = $bookLogic->getAllBooks($this->getDoctrine());
         return $this->render('home/index.html.twig', ['books' => $books,]);
     }
 }

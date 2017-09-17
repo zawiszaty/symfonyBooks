@@ -3,7 +3,7 @@
 namespace AppBundle\Utils;
 
 
-use AppBundle\Entity\Books;
+use AppBundle\Entity\Book;
 use AppBundle\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
@@ -11,14 +11,14 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
  * Class BooksLogic
  * @package AppBundle\Utils
  */
-class BooksLogic
+class BookLogic
 {
     /**
-     * @param Books $task
+     * @param Book $task
      * @param Registry $doctrine
      * @return bool
      */
-    public function addBook(Books $task, Registry $doctrine): bool
+    public function addBook(Book $task, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
         $em->persist($task);
@@ -27,31 +27,31 @@ class BooksLogic
     }
 
     /**
-     * @param Books $books
+     * @param Book $book
      * @param Registry $doctrine
      * @return bool
      */
-    public function delBook(Books $books, Registry $doctrine): bool
+    public function delBook(Book $book, Registry $doctrine): bool
     {
-        if ($books->getIdbooks() == null) {
+        if ($book->getIdbooks() == null) {
 
             return false;
         }
         $em = $doctrine->getManager();
-        $em->remove($books);
+        $em->remove($book);
         $em->flush();
         return true;
     }
 
     /**
-     * @param Books $books
+     * @param Book $book
      * @param Registry $doctrine
      * @return bool
      */
-    public function editBook(Books $books, Registry $doctrine): bool
+    public function editBook(Book $book, Registry $doctrine): bool
     {
         $em = $doctrine->getManager();
-        $em->persist($books);
+        $em->persist($book);
         $em->flush();
         return true;
     }
@@ -62,7 +62,7 @@ class BooksLogic
      */
     public function getAllBooks(Registry $doctrine): array
     {
-        $repositoryBooks = $doctrine->getRepository(Books::class);
+        $repositoryBooks = $doctrine->getRepository(Book::class);
         $books = $repositoryBooks->findAll();
         return $books;
     }
@@ -70,14 +70,14 @@ class BooksLogic
     /**
      * @param int $id
      * @param Registry $doctrine
-     * @return Books
+     * @return Book
      */
-    public function getSingleBook(int $id, Registry $doctrine): Books
+    public function getSingleBook(int $id, Registry $doctrine): Book
     {
-        $repositoryBooks = $doctrine->getRepository(Books::class);
+        $repositoryBooks = $doctrine->getRepository(Book::class);
         $book = $repositoryBooks->findOneByIdbooks($id);
         if (!$book) {
-            $book = new Books();
+            $book = new Book();
         }
         return $book;
     }

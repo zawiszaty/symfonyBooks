@@ -3,7 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Utils\AuthorLogic;
-use AppBundle\Utils\BooksLogic;
+use AppBundle\Utils\BookLogic;
 use AppBundle\Utils\CategoryLogic;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,7 +20,7 @@ class PanelController extends Controller
      * Get all books and category and authors
      *
      * @param Request       $request       object object
-     * @param BooksLogic    $booksLogic    bookslogic object
+     * @param BookLogic     $bookLogic     bookslogic object
      * @param AuthorLogic   $authorLogic   AuthorLogic
      * @param CategoryLogic $categoryLogic category
      *
@@ -28,10 +28,10 @@ class PanelController extends Controller
      *
      * @Route("/panel", name="panel")
      */
-    public function indexAction(Request $request, BooksLogic $booksLogic, AuthorLogic $authorLogic, CategoryLogic $categoryLogic): Response
+    public function indexAction(Request $request, BookLogic $bookLogic, AuthorLogic $authorLogic, CategoryLogic $categoryLogic): Response
     {
         $authors = $authorLogic->getAllAuthors($this->getDoctrine());
-        $books = $booksLogic->getAllBooks($this->getDoctrine());
+        $books = $bookLogic->getAllBooks($this->getDoctrine());
         $category = $categoryLogic->getAllCategory($this->getDoctrine());
         return $this->render('panel/index.html.twig', ['books' => $books, 'category' => $category, 'authors' => $authors,]);
     }

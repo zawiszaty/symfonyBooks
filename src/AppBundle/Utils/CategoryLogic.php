@@ -3,7 +3,7 @@
 namespace AppBundle\Utils;
 
 
-use AppBundle\Entity\Books;
+use AppBundle\Entity\Book;
 use AppBundle\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
@@ -71,7 +71,7 @@ class CategoryLogic
      */
     public function getCategoryBooks(int $id, Registry $doctrine): array
     {
-        $repositoryBooks = $doctrine->getRepository(Books::class);
+        $repositoryBooks = $doctrine->getRepository(Book::class);
         $books = $repositoryBooks->findByCategorycategory($id);
 
         return $books;

@@ -4,7 +4,7 @@ namespace AppBundle\Utils;
 
 
 use AppBundle\Entity\Authors;
-use AppBundle\Entity\Books;
+use AppBundle\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 
 /**
@@ -14,7 +14,6 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
 class AuthorLogic
 {
     /**
-     *
      *
      * @param Authors  $task
      * @param Registry $doctrine
@@ -29,7 +28,7 @@ class AuthorLogic
     }
 
     /**
-     * @param Authors $author
+     * @param Authors  $author
      * @param Registry $doctrine
      * @return bool
      */
@@ -66,13 +65,13 @@ class AuthorLogic
     }
 
     /**
-     * @param int $id
+     * @param int      $id
      * @param Registry $doctrine
      * @return array
      */
     public function getAuthorBook(int $id, Registry $doctrine): array
     {
-        $repositoryBooks = $doctrine->getRepository(Books::class);
+        $repositoryBooks = $doctrine->getRepository(Book::class);
         $books = $repositoryBooks->findByAuthorsauthors($id);
         return $books;
     }

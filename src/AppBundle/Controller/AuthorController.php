@@ -39,12 +39,12 @@ class AuthorController extends Controller
     /**
      * This method added author
      *
-     * @param Request     $request     sdfsdf
-     * @param AuthorLogic $authorLogic asdad
-     *
-     * @Route("/panel/add/author, name="addAuthor")
+     * @param Request     $request     request object
+     * @param AuthorLogic $authorLogic AuthorLogic service
      *
      * @return Response
+     *
+     * @Route("/panel/add/author", name="addAuthor")
      */
     public function addAuthor(Request $request, AuthorLogic $authorLogic): Response
     {
@@ -66,7 +66,7 @@ class AuthorController extends Controller
             }
             return $this->redirectToRoute('panel');
         }
-        return $this->render('panel/addAuthor.html.twig', array('form' => $form->createView()));
+        return $this->render('panel/addAuthor.html.twig', array('form' => $form->createView(),));
     }
 
     /**

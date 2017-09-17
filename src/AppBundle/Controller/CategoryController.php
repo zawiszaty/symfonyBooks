@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Books;
+use AppBundle\Entity\Book;
 use AppBundle\Entity\Category;
 use AppBundle\Form\AddCategoryType;
 use AppBundle\Form\EditCategoryType;
