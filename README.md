@@ -1,4 +1,1 @@
-symfonyBooks2
-=============
-
-A Symfony project created on August 30, 2017, 8:01 am.
+Kolejna appka w Symfony, tym razem bardzo prosta biblioteka. Podczas tego projektu właśnie dowiadziałem się czym jest psr (oraz skrót clr+alt + l w phpstormie) i jako tako zacząłem go przestrzegać. Doszło także jakieś rozdzielenie logiki od kontrolerów oraz phpdocs i walidacja w symfony :)
